@@ -1,14 +1,31 @@
 <!DOCTYPE html>
+<!--[if lt IE 7 ]> <html class="ie6" lang="en" xml:lang="en"> <![endif]-->
+<!--[if IE 7 ]>    <html class="ie7" lang="en" xml:lang="en"> <![endif]-->
+<!--[if IE 8 ]>    <html class="ie8" lang="en" xml:lang="en"> <![endif]-->
+<!--[if IE 9 ]>    <html class="ie9" lang="en" xml:lang="en"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--><html class="modern" lang="en"> <!--<![endif]-->
 <html>
-<head>
-  <title>Foxhall</title>
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-
-<%= yield %>
-
-</body>
+  <head>
+    <title>Foxhall Homes | <%= yield(:title) %></title>
+    <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+    <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+    <%= csrf_meta_tags %>
+    <%= render 'shared/shim' %>
+  </head>
+  <body <%= print_page_id %>>
+    <%= render 'shared/header' %>
+    <div id="content">
+      <div id="flashes">
+        <% if flash[:notice] %>
+          <p class="notice"><%= notice %></p>
+        <% end %>
+        <% if flash[:alert] %>
+          <p class="alert"><%= alert %></p>
+        <% end %>
+      </div>
+      <%= yield %>
+    </div>
+    <%= render 'shared/footer' %>
+    <%= render 'shared/ga' if Rails.env == 'production' %>
+  </body>
 </html>
