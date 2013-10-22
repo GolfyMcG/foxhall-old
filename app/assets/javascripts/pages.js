@@ -38,7 +38,7 @@ $(document).ready(function() {
       docked = false;
     }
     if ($("body").scrollTop() + navHeight >= heroHeight) {
-      $('.wrapper article').each(function(i) {
+      $('#content .wrapper article').each(function(i) {
         if ($(this).position().top <= $("body").scrollTop() - navHeight) {
             $('nav li.active').removeClass('active');
             $('nav li').eq(i+1).addClass('active');
