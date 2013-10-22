@@ -1,6 +1,24 @@
 <header>
-  <h1>This is the header</h1>
-  <nav>
-    <p>This is the nav.</p>
-  </nav>
+    <% if is_home? %>
+        <section id="hero">
+          <div id="logo">
+          </div>
+        </section>
+    <% else %>
+      <section class="wrapper">
+         <h1>This is the header</h1>
+      </section>
+    <% end %>
 </header>
+<nav>
+  <section class="wrapper">
+    <ul>
+      <%= nav_link("Home", "hero") %>
+      <%= nav_link("Communities", "communities") %>
+      <%= nav_link("Home Plans", "plans") %>
+      <%= nav_link("Features", "features") %>
+      <%= nav_link("Contact Us", "contact") %>
+    </ul>
+  </section>
+</nav>
+<section id="nav-placeholder" class="fixed"></section>

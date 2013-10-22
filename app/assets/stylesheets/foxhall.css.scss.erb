@@ -21,6 +21,7 @@
 2.3 Additional Typography
 2.4 Forms
 2.5 Buttons
+2.6 Property Classes
 
 3. Layout
 3.1 General
@@ -39,41 +40,119 @@
 /*=============================== */
 /*=== 1. Variable Declaration === */
 /*=============================== */
-
+* {
+    margin: 0;
+    padding: 0;
+}
 /*=== 1.1 Colors === */
-$primaryColor1: red;
-$primaryColor2: blue;
-$primaryColor3: green;
-$nuetralColor: white;
-$darkColor: black;
+$primaryColor1: #A4451A; //burnt orange
+$primaryColor2: #126F4C; //green
+$primaryColor3: #D28F71; //tan-orange
+$lightColor: darken(#FFFFFF, 5); //off-white
+$darkColor: lighten(#000000, 15); //off-black
 
 /*=== 1.2 Fonts === */
+@font-face  {
+    font-family: 'SerifFont1';
+    src:url('<%= asset_path 'Bodoni-Normal.ttf' %>') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face  {
+    font-family: 'SerifFont1';
+    src:url('<%= asset_path 'Bodoni-Bold.ttf' %>') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face  {
+    font-family: 'SerifFont1';
+    src:url('<%= asset_path 'Bodoni-Italic.ttf' %>') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face  {
+    font-family: 'SerifFont1';
+    src:url('<%= asset_path 'Bodoni-Bold-Italic.ttf' %>') format('truetype');
+    font-weight: bold;
+    font-style: italic;
+}
+
+@font-face  {
+    font-family: 'SansFont1';
+    src:url('<%= asset_path 'Helvetica-Normal.ttf' %>') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face  {
+    font-family: 'SansFont1';
+    src:url('<%= asset_path 'Helvetica-Italic.ttf' %>') format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face  {
+    font-family: 'SansFont1';
+    src:url('<%= asset_path 'Helvetica-Bold.ttf' %>') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
 /*=== 1.3 Sizes === */
+$wrapperWidth: 1000px;
 
 /*======================== */
 /*=== 2. Default Items === */
 /*======================== */
 /*=== 2.1 Headers Tags === */
 h1 {
-    color: $primaryColor1;
+    color: $darkColor;
+    font-family: 'SerifFont1', serif;
+    line-height: 1.2em;
+    font-size: 48px;
 }
 h2 {
-    color: $primaryColor2;
+    color: $primaryColor1;
+    font-family: 'SerifFont1', serif;
+    line-height: 1.2em;
 }
 h3 {
-    color: $primaryColor3;
+    color: $darkColor;
+    font-family: 'SerifFont1', serif;
+    line-height: 1.2em;
 }
 h4 {
+    color: $primaryColor1;
+    font-family: 'SerifFont1', serif;
+    line-height: 1.2em;
 }
 h5 {
+    color: $darkColor;
+    font-family: 'SerifFont1', serif;
+    line-height: 1.2em;
 }
 
 /*=== 2.2 Body Tags === */
 p {
+    color: $darkColor;
+    font-family: 'SansFont1', sans-serif;
+    line-height: 1.2em;
+}
+
+li {
+    color: $darkColor;
+    font-family: 'SansFont1', sans-serif;
+    line-height: 1.2em;
 }
 
 /*=== 2.3 Additional Typography === */
 a {
+    color: $primaryColor2;
+    font-family: 'SansFont1', sans-serif;
+    line-height: 1.2em;
 }
 /*=== 2.4 Forms === */
 form {
@@ -83,26 +162,100 @@ input {
 
 /*=== 2.5 Buttons === */
 
+/*=== 2.6 Property Classes === */
+.fixed  {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+}
+
 /*================= */
 /*=== 3. Layout === */
 /*================= */
 /*=== 3.1 General === */
 html {
+    background-color: $primaryColor1;
 }
 body {
+}
+.wrapper {
+    width: $wrapperWidth;
+    margin: 0 auto;
+    position: relative;
 }
 
 /*=== 3.2 Header === */
 header {
-    background-color: darken($nuetralColor, 10)
+    #hero {
+        position: relative;
+        top: 0px;
+        width: 100%;
+        height: 450px;
+        background-image: url(<%= asset_path 'home-cover-photo.png' %>);
+        background-position: center center;
+        background-repeat: no-repeat;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        #logo {
+            background-image: url(<%= asset_path 'logo.png' %>);
+            background-position: center center;
+            background-repeat: no-repeat;
+            display: block;
+            width: 500px;
+            height: 180px;
+            position:relative;
+            top: 0;
+            left: 0;
+        }
+    }
 }
 /*=== 3.3 Nav === */
 nav {
-    background-color: darken($nuetralColor, 20)
+    background-color: $primaryColor1;
+    ul {
+        list-style-type: none;
+        li {
+            display: inline-block;
+            width: 19.5%;
+            height: 1em;
+            font-size: 20px;
+            font-weight: 500;
+            color: $lightColor;
+            text-align: center;
+            -webkit-text-shadow: 1px 1px lighten(#000000, 20);
+            -moz-text-shadow: 1px 1px lighten(#000000, 20);
+            text-shadow: 1px 1px lighten(#000000, 20);
+            cursor: pointer;
+            padding: 5px 0;
+            -webkit-transition: background-color 0.2s ease-in-out;
+            -moz-transition: background-color 0.2s ease-in-out;
+            transition: background-color 0.2s ease-in-out;
+            &:hover, &.active {
+                background-color: $primaryColor2;
+            }
+            a {
+                width: 100%;
+                height: 100%;
+                text-decoration: none;
+                display: block;
+                color: $lightColor;
+            }
+        }
+    }
 }
+
+#nav-placeholder {
+    height: 20px;
+}
+
 /*=== 3.4 Content === */
 #content {
-    background-color: darken($nuetralColor, 30)
+    background-color: $lightColor;
+    min-height: 400px;
+    display: block;
 }
 section {
 }
@@ -113,7 +266,8 @@ aside {
 
 /*=== 3.5 Footer === */
 footer {
-    background-color: darken($nuetralColor, 40)
+    background-color: $primaryColor1;
+    height: 150px;
 }
 
 /*=== 3.6 Other Layouts === */
@@ -122,3 +276,11 @@ footer {
 /*==================== */
 /*=== 4. Home Page === */
 /*==================== */
+#page-pages-home {
+    article {
+        min-height: 500px;
+        header {
+            padding-top: 25px;
+        }
+    }
+}
