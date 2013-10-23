@@ -10,6 +10,7 @@
     <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
     <%= csrf_meta_tags %>
     <%= render 'shared/shim' %>
+    <%= javascript_include_tag 'https://maps.googleapis.com/maps/api/js?key=AIzaSyDPErF3cJvkwOSEDAuwCbvSsiOBYE4PvNc&sensor=true' unless Rails.env.test? %>
   </head>
   <body <%= print_page_id %>>
     <%= render 'shared/header' %>

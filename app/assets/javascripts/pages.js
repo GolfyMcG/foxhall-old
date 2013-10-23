@@ -1,4 +1,15 @@
-$(document).ready(function() {
+var map;
+function initialize() {
+  var mapOptions = {
+    zoom: 9,
+    center: new google.maps.LatLng(38.8951, -77.0367),
+    mapTypeId: google.maps.MapTypeId.ROADMAP
+  };
+  map = new google.maps.Map(document.getElementById('community-map'),
+      mapOptions);
+}
+
+$(function() {
 
   // **********************************
   // ** ScrollTo Function for header **
@@ -50,4 +61,5 @@ $(document).ready(function() {
     }
   });
 
+  initialize();
 });

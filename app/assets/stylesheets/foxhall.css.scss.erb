@@ -110,9 +110,10 @@ $wrapperWidth: 1000px;
 /*=== 2.1 Headers Tags === */
 h1 {
     color: $darkColor;
-    font-family: 'SerifFont1', serif;
+    font-family: 'SansFont1', sans-serif;
     line-height: 1.2em;
     font-size: 48px;
+    margin: 15px 0 0 0;
 }
 h2 {
     color: $primaryColor1;
@@ -121,8 +122,10 @@ h2 {
 }
 h3 {
     color: $darkColor;
-    font-family: 'SerifFont1', serif;
+    font-family: 'SansFont1', sans-serif;
+    font-size: 24px;
     line-height: 1.2em;
+    font-weight: normal;
 }
 h4 {
     color: $primaryColor1;
@@ -168,6 +171,18 @@ input {
     top: 0;
     width: 100%;
     z-index: 1;
+}
+
+.center {
+    text-align: center;
+}
+
+.line-break {
+  border-bottom: 1px solid $primaryColor3;
+  width: 50%;
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 15px;
 }
 
 /*================= */
@@ -228,9 +243,8 @@ nav {
             font-weight: 500;
             color: $lightColor;
             text-align: center;
-            -webkit-text-shadow: 1px 1px lighten(#000000, 20);
-            -moz-text-shadow: 1px 1px lighten(#000000, 20);
-            text-shadow: 1px 1px lighten(#000000, 20);
+            -moz-text-shadow: 1px 1px lighten(#000000, 30);
+            text-shadow: 1px 1px lighten(#000000, 30);
             cursor: pointer;
             -webkit-transition: background-color 0.2s ease-in-out;
             -moz-transition: background-color 0.2s ease-in-out;
@@ -302,9 +316,25 @@ footer {
 #page-pages-home {
   #content {
         article {
-            min-height: 500px;
             header {
-                padding-top: 25px;
+                padding-top: 20px;
+            }
+            &#communities {
+                header  {
+                    text-align: center;
+                    display: block;
+                    width: 100%;
+                    margin: 0 auto;
+                }
+                #community-map {
+                  display: block;
+                  width: 80%;
+                  height: 400px;
+                  margin: 10px auto;
+                  background-color: $primaryColor3;
+                }
+            }
+            &#plans {
             }
         }
     }
