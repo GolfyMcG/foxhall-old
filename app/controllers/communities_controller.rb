@@ -15,6 +15,7 @@ class CommunitiesController < ApplicationController
   # GET /communities/new
   def new
     @community = Community.new
+    @community.address ||= Address.new
   end
 
   # GET /communities/1/edit
@@ -25,6 +26,7 @@ class CommunitiesController < ApplicationController
   # POST /communities.json
   def create
     @community = Community.new(community_params)
+    @community.address ||= Address.new(address_params)
 
     respond_to do |format|
       if @community.save
@@ -70,5 +72,8 @@ class CommunitiesController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def community_params
       params.require(:community).permit(:name, :description)
+    end
+    def address_params
+      params.require(:address).permit(:line_1, :line_2, :city, :state, :zipcode)
     end
 end

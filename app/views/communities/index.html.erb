@@ -5,9 +5,11 @@
     <tr>
       <th>Name</th>
       <th>Description</th>
-      <th></th>
-      <th></th>
-      <th></th>
+      <th>Address Line 1</th>
+      <th>Address Line 2</th>
+      <th>Address City</th>
+      <th>Address State</th>
+      <th>Address Zipcode</th>
     </tr>
   </thead>
 
@@ -16,6 +18,11 @@
       <tr>
         <td><%= community.name %></td>
         <td><%= community.description %></td>
+        <td><%= community.address.line_1 %></td>
+        <td><%= community.address.line_2 %></td>
+        <td><%= community.address.city %></td>
+        <td><%= community.address.state %></td>
+        <td><%= community.address.zipcode %></td>
         <td><%= link_to 'Show', community %></td>
         <td><%= link_to 'Edit', edit_community_path(community) %></td>
         <td><%= link_to 'Destroy', community, method: :delete, data: { confirm: 'Are you sure?' } %></td>
