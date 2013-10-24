@@ -6,7 +6,7 @@
       <div class="line-break"></div>
     </header>
     <h3 class="center">Foxhall Homes is building all over the Metro DC Area.</h3>
-    <div id="community-map"></div>
+    <%= content_tag :div, "", id: "community-map", data: {markers: community_map_markers } %>
   </article>
 
   <article id="plans">

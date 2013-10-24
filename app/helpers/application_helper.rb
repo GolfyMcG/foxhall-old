@@ -21,4 +21,16 @@ module ApplicationHelper
     options[:href] = href
     content_tag(:li, content_tag(:a, link_name, options))
   end
+
+  def community_map_markers
+    communities = Community.all
+    communities.map do |community|
+      {
+        name: community.name,
+        latitude: community.address.latitude,
+        longitude: community.address.longitude
+      }
+    end
+  end
+
 end
