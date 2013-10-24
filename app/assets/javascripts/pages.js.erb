@@ -14,15 +14,43 @@ $(function() {
     var logoIcon = "<%= asset_path('map_logo.png') %>";
 
     for(var i = 0; i < marker_data.length; i++) {
+
       LatLngList.push(new google.maps.LatLng (marker_data[i]['latitude'], marker_data[i]['longitude']));
       bounds.extend (LatLngList[i]);
+
       var marker = new google.maps.Marker({
         position: LatLngList[i],
         map: map,
         title: marker_data[i]['name'],
         icon: logoIcon
+      });
+
+      var descriptionString = marker_data[i]['description'];
+      if (descriptionString.length > 150 ) {
+        descriptionString = descriptionString.substring(0,149)+"...";
       }
-    )};
+      var contentString = 
+        '<div class="infoWindow">' +
+          '<h1>' +
+            marker_data[i]['name'] +
+          '</h1>' +
+          '<p class="infoAddress">' +
+            marker_data[i]['full_address'] +
+          '</p>' +
+          '<p class="infoDescription">' +
+            descriptionString +
+          '</p>' +
+        '</div>';
+      var infoWindow = new google.maps.InfoWindow;
+
+      bindInfoWindow(marker, contentString, infoWindow);
+    };
+    function bindInfoWindow(marker, contentString, infoWindow) {
+      google.maps.event.addListener(marker, 'click', function() {
+        infoWindow.setContent(contentString);
+        infoWindow.open(map, marker);
+      });
+    }
     map.fitBounds(bounds);
   }
 

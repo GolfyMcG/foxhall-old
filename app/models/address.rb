@@ -15,11 +15,12 @@ class Address < ActiveRecord::Base
 
   def to_s(options = { })
     formated_address = ''
-    formated_address << self.line_1
-    unless self.line_2.blank?
-      formated_address << "\n" << self.line_2
+    if self.line_2.blank?
+      formated_address << self.line_1
+    else
+      formated_address << self.line_1 << " " << self.line_2
     end
-    formated_address << "\n" << self.zipcode
+    formated_address << "<br/>" << self.city << ", " << self.state << " " << self.zipcode
   end
 
   def print_for_text

@@ -27,6 +27,8 @@ module ApplicationHelper
     communities.map do |community|
       {
         name: community.name,
+        description: community.description,
+        full_address: community.address.to_s,
         latitude: community.address.latitude,
         longitude: community.address.longitude
       }
