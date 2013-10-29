@@ -22,3 +22,10 @@ Address.create(addressable_id: 6, addressable_type: "Community", line_1: "2102 F
 Address.create(addressable_id: 7, addressable_type: "Community", line_1: "8783 Grassland Ct.", line_2: "", city: "Waldorf", state: "MD", zipcode: "20603")
 Address.create(addressable_id: 8, addressable_type: "Community", line_1: "11365 Raby Road", line_2: "", city: "Waldorf", state: "MD", zipcode: "20601")
 Address.create(addressable_id: 9, addressable_type: "Community", line_1: "11500 Lady Alison Court", line_2: "", city: "Waldorf", state: "MD", zipcode: "20601")
+
+Collection.create([
+  {name: "City"},
+  {name: "Executive"},
+  {name: "Signature"},
+  {name: "Presidential"}
+])

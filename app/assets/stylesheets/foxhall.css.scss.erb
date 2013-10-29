@@ -178,11 +178,13 @@ input {
 }
 
 .line-break {
-  border-bottom: 1px solid $primaryColor3;
-  width: 50%;
-  display: block;
-  margin: 0 auto;
-  margin-bottom: 15px;
+    border-bottom: 1px solid $primaryColor3;
+    width: 50%;
+    display: block;
+    margin-bottom: 15px;
+    &.center {
+        margin: 0 auto;
+    }
 }
 
 /*================= */
@@ -354,6 +356,29 @@ footer {
                   height: 400px;
                   margin: 10px auto;
                   background-color: $primaryColor3;
+                }
+            }
+            &#plans {
+                .collection_icon {
+                    display: block;
+                    margin: 15px 0;
+                    width: 320px;
+                    background-color: #FFFFFF;
+                    text-align: right;
+                    background-image: url(<%= asset_path 'map_logo.png' %>);
+                    background-position: 15px center;
+                    background-repeat: no-repeat;
+                    border: 1px solid darken($lightColor, 10);
+                    border-bottom-width: 2px;
+                    -webkit-transition: background-color 0.2s ease-in-out;
+                    -moz-transition: background-color 0.2s ease-in-out;
+                    transition: background-color 0.2s ease-in-out;
+                    &:hover {
+                        background-color: lighten($primaryColor2, 30);
+                    }
+                    h3 {
+                        padding: 25px 15px 20px 0;
+                    }
                 }
             }
         }

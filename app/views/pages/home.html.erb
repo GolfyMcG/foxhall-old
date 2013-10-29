@@ -3,15 +3,21 @@
   <article id="communities">
     <header>
       <h1>Prime Locations</h1>
-      <div class="line-break"></div>
+      <div class="line-break center"></div>
     </header>
     <h3 class="center">Foxhall Homes is building all over the Metro DC Area.</h3>
     <%= content_tag :div, "", id: "community-map", data: {markers: community_map_markers } %>
   </article>
 
   <article id="plans">
-    <header><h1>Pick Any Floor Plan...</h1></header>
-    <p>This is something about floor plans</p>
+    <header>
+      <h1>Pick Any Floor Plan...</h1>
+      <div class="line-break"></div>
+    </header>
+    <h3>Browse our unique collections for your dream home.</h3>
+    <% @collections.each do |collection| %>
+      <%= "<div class='collection_icon #{collection.name.downcase}_collection'><h3>#{collection.name.titleize} Collection</h3></div>".html_safe %>
+    <% end %>
   </article>
 
   <article id="features">
