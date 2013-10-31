@@ -26,14 +26,13 @@ class MessagesController < ApplicationController
   def create
     @message = Message.new(message_params)
 
-    respond_to do |format|
-      if @message.save
-        format.html { redirect_to @message, notice: 'Message was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @message }
-      else
-        format.html { render action: 'new' }
-        format.json { render json: @message.errors, status: :unprocessable_entity }
-      end
+    if @message.save
+      flash[:message] = nil
+      redirect_to root_path, notice: "Your message has been sent!"
+    else
+      flash[:alert] = "Invalid submission, please try again!"
+      flash[:message] = @message.attributes
+      redirect_to rootp_path
     end
   end
 

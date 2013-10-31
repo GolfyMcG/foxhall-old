@@ -58,6 +58,11 @@
       <h3>Contact us to schedule a showing</h3>
     </header>
     <section class="contact-form">
+      <%= minimal_form_for @message do |f| %>
+        <%= f.input :email, placeholder: "Your email" %>
+        <%= f.input :message, placeholder: "What's on your mind?" %>
+        <%= f.button :submit, value: "Contact Us"  %>
+      <% end %>
     </section>
   </article>
 
