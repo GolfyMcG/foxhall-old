@@ -6,7 +6,8 @@ $(function() {
   var map;
   function initialize() {
     var mapOptions = {
-      mapTypeId: google.maps.MapTypeId.ROADMAP
+      mapTypeId: google.maps.MapTypeId.ROADMAP,
+      scrollwheel: false
     };
 
     map = new google.maps.Map(document.getElementById('community-map'),

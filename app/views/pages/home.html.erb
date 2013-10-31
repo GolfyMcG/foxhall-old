@@ -4,8 +4,8 @@
     <header>
       <h1>Prime Locations</h1>
       <div class="line-break center"></div>
+      <h3 class="center">Foxhall Homes is building all over the Metro DC Area.</h3>
     </header>
-    <h3 class="center">Foxhall Homes is building all over the Metro DC Area.</h3>
     <%= content_tag :div, "", id: "community-map", data: {markers: community_map_markers } %>
   </article>
 
@@ -13,15 +13,15 @@
     <header>
       <h1>Pick Any Floor Plan...</h1>
       <div class="line-break"></div>
+      <h3>Browse our unique collections for your dream home.</h3>
     </header>
-    <h3>Browse our unique collections for your dream home.</h3>
     <section id="floor-plan-container">
       <% @collections.each do |collection| %>
         <% collection_selector = collection.name.downcase == "city" ? "active-list" : "" %>
         <%= "<div class='home-list #{collection.name.downcase}-collection #{collection_selector} '>".html_safe %>
           <ul>
             <% collection.homes.each do |home| %>
-              <%= "<li> #{home.name}</li>".html_safe %>
+              <%= link_to "<li> #{home.name}</li>".html_safe, home_path(home.id) %>
             <% end %>
           </ul>
         </div>
@@ -36,8 +36,11 @@
   </article>
 
   <article id="features">
-    <header><h1>...And Make it Your Own</h1></header>
-    <p>This is something about features</p>
+    <header>
+      <h1>...And Make it Your Own</h1>
+      <div class="line-break right"></div>
+      <h3>Customize everything with our hundreds of features.</h3>
+    </header>
   </article>
 
   <article id="contact">
