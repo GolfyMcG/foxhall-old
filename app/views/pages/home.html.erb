@@ -42,6 +42,11 @@
       <div class="line-break right"></div>
       <h3>Customize everything with hundreds of features.</h3>
     </header>
+    <% @feature_types.each do |feature_type| %>
+      <ul>
+        <li><%= feature_type.name %></li>
+      </ul>
+    <% end %>
   </article>
 
   <article id="contact">

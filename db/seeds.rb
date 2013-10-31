@@ -53,3 +53,14 @@ Home.create([
   {name: "James Monroe", description: "Spectacular owner's suite", area: 4627, collection_id: 4, width: 68, depth: 50, bedrooms: 4, bathrooms: 3.5},
   {name: "John Adams", description: "Elegance and grandeur at every turn", area: 4717, collection_id: 4, width: 72, depth: 48, bedrooms: 4, bathrooms: 3.5}
 ])
+
+FeatureType.create([
+  {name: "Designer Kitchens"},
+  {name: "Luxurious Baths"},
+  {name: "Advanced Technologies"},
+  {name: "High Efficiency Homes"},
+  {name: "Appealing Exteriors"},
+  {name: "Interior Elegance"},
+  {name: "Customer Services and Commitment"},
+  {name: "Green Features"}
+])
