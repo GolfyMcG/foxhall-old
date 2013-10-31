@@ -113,6 +113,10 @@ $homeListIconWidth: ($homeListContainerWidth)/ $homeListIconColumns - $homeListI
 $homeListIconHeight: $homeListIconWidth*0.70;
 $homeListContainerHeight: ($homeListIconHeight+$homeListIconPadding*2+$homeListIconBorder*2)*$homeListIconRows;
 
+$featureTypeIconMargin: 20px;
+$featureTypeIconBorder: 1px;
+$featureTypeIconWidth: $wrapperWidth*0.5 - $featureTypeIconMargin*2 - $featureTypeIconBorder*2;
+
 /*======================== */
 /*=== 2. Default Items === */
 /*======================== */
@@ -290,6 +294,11 @@ aside {
 }
 
 /*=== 3.5 Footer === */
+.footer-gap {
+    display: block;
+    height: 40px;
+    width: 100%;
+}
 footer {
     padding: 20px 0;
     background-color: $primaryColor1;
@@ -352,9 +361,6 @@ footer {
             &#communities {
                 header  {
                     text-align: center;
-                    display: block;
-                    width: 100%;
-                    margin: 0 auto;
                 }
                 #community-map {
                   display: block;
@@ -439,9 +445,53 @@ footer {
                 }
             }
             &#features {
-                height: 550px;
                 header {
                     text-align: right;
+                }
+                ul.feature-types {
+                    list-style-type:none;
+                    a {
+                        text-decoration: none;
+                        background-image: url(<%= asset_path 'map_logo.png' %>);
+                        background-position: center center;
+                        background-repeat: no-repeat;
+                        display: inline-block;
+                        float: left;
+                        font-size: 22px;
+                        text-align: center;
+                        width: $featureTypeIconWidth;
+                        height: 1em;
+                        padding: 25px 0;
+                        margin: 15px $featureTypeIconMargin;
+                        border: $featureTypeIconBorder solid darken($lightColor, 10);
+                        border-bottom-width: 2px;
+                        -webkit-transition: border 0.2s ease-in-out;
+                        -moz-transition: border 0.2s ease-in-out;
+                        transition: border 0.2s ease-in-out;
+                        &:hover {
+                            border-color: darken($lightColor, 30);
+                        }
+                        li {
+                            display: inline-block;
+                            color: white;
+                            height: 1em;
+                            padding: 3px 20px;
+                            background-color: lighten(black,30);
+                            background-color: rgba(lighten(black,30), 0.6);
+                        }
+                    }
+                }
+            }
+            &#contact {
+                header {
+                    text-align: center;
+                }
+                .contact-form {
+                    display: block;
+                    height: 300px;
+                    width: 80%;
+                    background-color: $primaryColor3;
+                    margin: 0px auto;
                 }
             }
         }

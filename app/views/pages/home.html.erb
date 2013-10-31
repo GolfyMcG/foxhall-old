@@ -3,8 +3,8 @@
   <article id="communities">
     <header>
       <h1>Prime Locations</h1>
-      <div class="line-break center"></div>
-      <h3 class="center">Foxhall Homes is building all over the Metro DC Area.</h3>
+      <div class="line-break"></div>
+      <h3>Foxhall Homes is building all over the Metro DC Area.</h3>
     </header>
     <%= content_tag :div, "", id: "community-map", data: {markers: community_map_markers } %>
   </article>
@@ -43,15 +43,22 @@
       <h3>Customize everything with hundreds of features.</h3>
     </header>
     <% @feature_types.each do |feature_type| %>
-      <ul>
-        <li><%= feature_type.name %></li>
+      <% feature_asset_url = image_path "features/" + feature_type.name.downcase.gsub(" ", "_") + ".png" %>
+      <ul class="feature-types">
+        <%= link_to "<li> #{feature_type.name}</li>".html_safe, feature_type_path(feature_type.id), { style: "background-image: url(#{feature_asset_url});"} %>
       </ul>
     <% end %>
+    <div class="clear-fix"></div>
   </article>
 
   <article id="contact">
-    <header><h1>Get Started Today</h1></header>
-    <p>This is something about contacting</p>
+    <header>
+      <h1>Get Started Today</h1>
+      <div class="line-break"></div>
+      <h3>Contact us to schedule a showing</h3>
+    </header>
+    <section class="contact-form">
+    </section>
   </article>
 
 </section>
