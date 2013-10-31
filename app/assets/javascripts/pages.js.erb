@@ -1,5 +1,8 @@
 var marker_data = $("#community-map").data("markers");
 $(function() {
+  // ***************************
+  // ** Produce Community Map **
+  // ***************************
   var map;
   function initialize() {
     var mapOptions = {
@@ -105,6 +108,17 @@ $(function() {
       $('nav li.active').removeClass('active');
       $('nav li:first').addClass('active');
     }
+  });
+
+  // ********************************
+  // ** Hide/Show Collection Homes **
+  // ********************************
+  $('.collection-icon').click(function(){
+    $('.home-list').removeClass('active-list');
+    $('.collection-icon').removeClass('active-icon');
+    $(this).addClass('active-icon');
+    var active_tab = $(this).data('tab');
+    $(active_tab).addClass('active-list');
   });
 
 });

@@ -15,9 +15,24 @@
       <div class="line-break"></div>
     </header>
     <h3>Browse our unique collections for your dream home.</h3>
-    <% @collections.each do |collection| %>
-      <%= "<div class='collection_icon #{collection.name.downcase}_collection'><h3>#{collection.name.titleize} Collection</h3></div>".html_safe %>
-    <% end %>
+    <section id="floor-plan-container">
+      <% @collections.each do |collection| %>
+        <% collection_selector = collection.name.downcase == "city" ? "active-list" : "" %>
+        <%= "<div class='home-list #{collection.name.downcase}-collection #{collection_selector} '>".html_safe %>
+          <ul>
+            <% collection.homes.each do |home| %>
+              <%= "<li> #{home.name}</li>".html_safe %>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+      <% @collections.each do |collection| %>
+        <% collection_selector = collection.name.downcase == "city" ? "active-icon" : "" %>
+        <%= "<div class='collection-icon #{collection.name.downcase}-collection #{collection_selector} '
+               data-tab='.#{collection.name.downcase}-collection' ><h3>#{collection.name.titleize} Collection</h3></div>".html_safe %>
+      <% end %>
+      <div class="clear-fix"></div>
+    </section>
   </article>
 
   <article id="features">

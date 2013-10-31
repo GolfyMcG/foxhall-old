@@ -104,6 +104,15 @@ $darkColor: lighten(#000000, 15); //off-black
 /*=== 1.3 Sizes === */
 $wrapperWidth: 1000px;
 
+$homeListContainerWidth: 600px;
+$homeListIconRows: 3;
+$homeListIconColumns: 3;
+$homeListIconPadding: 5px;
+$homeListIconBorder: 1px;
+$homeListIconWidth: ($homeListContainerWidth)/ $homeListIconColumns - $homeListIconPadding*2 - $homeListIconBorder*2;
+$homeListIconHeight: $homeListIconWidth*0.70;
+$homeListContainerHeight: ($homeListIconHeight+$homeListIconPadding*2+$homeListIconBorder*2)*$homeListIconRows;
+
 /*======================== */
 /*=== 2. Default Items === */
 /*======================== */
@@ -359,25 +368,64 @@ footer {
                 }
             }
             &#plans {
-                .collection_icon {
-                    display: block;
-                    margin: 15px 0;
-                    width: 320px;
-                    background-color: #FFFFFF;
-                    text-align: right;
-                    background-image: url(<%= asset_path 'map_logo.png' %>);
-                    background-position: 15px center;
-                    background-repeat: no-repeat;
-                    border: 1px solid darken($lightColor, 10);
-                    border-bottom-width: 2px;
-                    -webkit-transition: background-color 0.2s ease-in-out;
-                    -moz-transition: background-color 0.2s ease-in-out;
-                    transition: background-color 0.2s ease-in-out;
-                    &:hover {
-                        background-color: lighten($primaryColor2, 30);
+                #floor-plan-container {
+                    height: 410px;
+                    margin-top: 20px;
+                    .collection-icon {
+                        display: block;
+                        margin: 15px 0;
+                        width: 320px;
+                        background-color: #FFFFFF;
+                        text-align: right;
+                        background-image: url(<%= asset_path 'map_logo.png' %>);
+                        background-position: 15px center;
+                        background-repeat: no-repeat;
+                        border: 1px solid darken($lightColor, 10);
+                        border-bottom-width: 2px;
+                        -webkit-transition: background-color 0.2s ease-in-out;
+                        -moz-transition: background-color 0.2s ease-in-out;
+                        transition: background-color 0.2s ease-in-out;
+                        float: left;
+                        cursor: pointer;
+                        &.active-icon {
+                            background-color: darken(#FFFFFF, 10);
+                        }
+                        &:hover {
+                            background-color: darken(#FFFFFF, 10);
+                        }
+                        h3 {
+                            padding: 25px 15px 20px 0;
+                        }
                     }
-                    h3 {
-                        padding: 25px 15px 20px 0;
+                    .home-list {
+                        display: none;
+                        width: $homeListContainerWidth;
+                        float: right;
+                        height: $homeListContainerHeight;
+                        background-color: #FFFFFF;
+                        border: 1px solid darken($lightColor, 10);
+                        border-bottom-width: 2px;
+                        &.active-list {
+                          display: block;
+                        }
+                        ul {
+                            list-style-type: none;
+                            li {
+                              display: inline-block;
+                              text-align: center;
+                              width: $homeListIconWidth;
+                              padding: $homeListIconPadding;
+                              height: $homeListIconHeight;
+                              border: $homeListIconBorder solid #FFFFFF;
+                              float: left;
+                              -webkit-transition: border 0.2s ease-in-out;
+                              -moz-transition: border 0.2s ease-in-out;
+                              transition: border 0.2s ease-in-out;
+                              &:hover {
+                                  border-color: darken($lightColor, 30);
+                              }
+                            }
+                        }
                     }
                 }
             }
