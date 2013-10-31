@@ -1,4 +1,6 @@
 Foxhall::Application.routes.draw do
+  resources :feature_types
+
   resources :homes
 
   resources :collections

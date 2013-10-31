@@ -21,7 +21,8 @@
         <%= "<div class='home-list #{collection.name.downcase}-collection #{collection_selector} '>".html_safe %>
           <ul>
             <% collection.homes.each do |home| %>
-              <%= link_to "<li> #{home.name}</li>".html_safe, home_path(home.id) %>
+              <% home_asset_url = image_path "homes/" + home.name.downcase.gsub(" ", "_") + ".jpg" %>
+              <%= link_to "<li> #{home.name}</li>".html_safe, home_path(home.id), { style: "background-image: url(#{home_asset_url});"} %>
             <% end %>
           </ul>
         </div>
@@ -39,7 +40,7 @@
     <header>
       <h1>...And Make it Your Own</h1>
       <div class="line-break right"></div>
-      <h3>Customize everything with our hundreds of features.</h3>
+      <h3>Customize everything with hundreds of features.</h3>
     </header>
   </article>
 
