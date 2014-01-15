@@ -1,29 +1,23 @@
-var marker_data = $("#community-map").data("markers");
 $(function() {
   // ***************************
   // ** Produce Community Map **
   // ***************************
-  var map;
+  var marker_data = $("#community-map").data("markers");
   function initialize() {
-    var mapOptions = {
-      mapTypeId: google.maps.MapTypeId.ROADMAP,
-      scrollwheel: false
-    };
+    var map = new google.maps.Map(document.getElementById('community-map'),
+      {mapTypeId: google.maps.MapTypeId.ROADMAP,scrollwheel: false}
+    );
 
-    map = new google.maps.Map(document.getElementById('community-map'),
-        mapOptions);
-
-    var LatLngList = new Array();
-    var bounds = new google.maps.LatLngBounds();
     var logoIcon = "<%= asset_path('map_logo.png') %>";
+    var bounds = new google.maps.LatLngBounds();
 
+    var latLngList = new Array();
     for(var i = 0; i < marker_data.length; i++) {
-
-      LatLngList.push(new google.maps.LatLng (marker_data[i]['latitude'], marker_data[i]['longitude']));
-      bounds.extend (LatLngList[i]);
+      latLngList.push(new google.maps.LatLng (marker_data[i]['latitude'], marker_data[i]['longitude']));
+      bounds.extend (latLngList[i]);
 
       var marker = new google.maps.Marker({
-        position: LatLngList[i],
+        position: latLngList[i],
         map: map,
         title: marker_data[i]['name'],
         icon: logoIcon
@@ -33,7 +27,7 @@ $(function() {
       if (descriptionString.length > 150 ) {
         descriptionString = descriptionString.substring(0,149)+"...";
       }
-      var contentString = 
+      var contentString =
         '<div class="infoWindow">' +
           '<h1>' +
             marker_data[i]['name'] +
@@ -48,6 +42,7 @@ $(function() {
       var infoWindow = new google.maps.InfoWindow;
 
       bindInfoWindow(marker, contentString, infoWindow);
+      map.fitBounds(bounds);
     };
     function bindInfoWindow(marker, contentString, infoWindow) {
       google.maps.event.addListener(marker, 'click', function() {
@@ -55,8 +50,6 @@ $(function() {
         infoWindow.open(map, marker);
       });
     }
-    map.fitBounds(bounds);
-
   }
 
   initialize();
