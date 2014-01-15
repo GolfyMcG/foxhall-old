@@ -115,4 +115,19 @@ $(function() {
     $(active_tab).addClass('active-list');
   });
 
+  // *********************************
+  // ** Max Height on Window Resize **
+  // *********************************
+
+  resizeDiv();
+
+  window.onresize = function(event) {
+    resizeDiv();
+  }
+
+  function resizeDiv() {
+    vph = $(window).height();
+    $('.max-height').css({'height':vph});
+  }
+
 });

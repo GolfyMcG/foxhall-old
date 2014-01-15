@@ -1,6 +1,6 @@
 <% provide(:title, "Home") %>
 <section class="wrapper">
-  <article id="communities">
+  <article id="communities" class="max-height">
     <header>
       <h1>Prime Locations</h1>
       <div class="line-break"></div>
@@ -9,7 +9,7 @@
     <%= content_tag :div, "", id: "community-map", data: {markers: community_map_markers } %>
   </article>
 
-  <article id="plans">
+  <article id="plans" class="max-height">
     <header>
       <h1>Pick Any Floor Plan...</h1>
       <div class="line-break"></div>
@@ -36,7 +36,7 @@
     </section>
   </article>
 
-  <article id="features">
+  <article id="features" class="max-height">
     <header>
       <h1>...And Make it Your Own</h1>
       <div class="line-break right"></div>
@@ -51,7 +51,7 @@
     <div class="clear-fix"></div>
   </article>
 
-  <article id="contact">
+  <article id="contact" class="max-height">
     <header>
       <h1>Get Started Today</h1>
       <div class="line-break"></div>
