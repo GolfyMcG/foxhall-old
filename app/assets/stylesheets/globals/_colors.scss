@@ -1,0 +1,69 @@
+// ****************************************************************************
+// Color Definitions and Associations
+// This scss file is only for the use of defining color variables. In order to
+// ensure consistent styling, ALL colors should stem from these defined colors
+// and all colors should be defined here. Color functions should be not be used
+// to avoid the use of our brand colors.
+// ****************************************************************************
+
+
+//===============================
+//====== Color Definitions ======
+//===============================
+
+// ************
+// Basic Colors
+// ************
+$primaryColor1: #A4451A;
+$lightPrimaryColor1: lighten($primaryColor1, 10);
+$darkPrimaryColor1: darken($primaryColor1, 10);
+
+$primaryColor2: #6790B5;
+$lightPrimaryColor2: lighten($primaryColor2, 10);
+$darkPrimaryColor2: darken($primaryColor2, 10);
+
+$primaryColor3: #D28F71;
+$lightPrimaryColor3: lighten($primaryColor3, 10);
+$darkPrimaryColor3: darken($primaryColor3, 10);
+
+// ***********************
+// Black, and White Colors
+// ***********************
+$offBlack: lighten(#000000, 15);
+$darkGrey: lighten($offBlack, 30);
+$lightGrey: lighten($offBlack, 50);
+$offWhite: darken(#FFFFFF, 5);
+
+//================================
+//====== Color Associations ======
+//================================
+
+// Button Colors
+$buttonDefaultColor: $primaryColor1;
+$buttonDarkColor: darken($buttonDefaultColor, 4);
+$buttonLightColor: lighten($buttonDefaultColor, 5);
+
+//BG Colors
+$bgColor1: $offBlack;
+$bgColor2: #FFF;
+$bgColor3: $offWhite;
+
+// Flash Colors
+$errorBorder: saturate($primaryColor1, 15);
+$errorBg: lighten($errorBorder, 10);
+
+$successBorder: $primaryColor3;
+$successBg: lighten($successBorder, 10);
+
+// Typography Colors
+$headerColor1: $offBlack;
+
+// Input Colors
+$inputBorderInactive: darken($offWhite, 10);
+$inputBorderActive: $primaryColor1;
+
+// Table Colors
+$tableColor: $primaryColor2;
+
+// Form error colors
+$formErrorColor: $darkPrimaryColor1;

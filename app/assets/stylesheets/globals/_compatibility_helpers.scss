@@ -1,0 +1,92 @@
+// ****************************************************************************
+// Compatibility Helpers
+// These are the helpers used for eliminating redundant XBC prefixes etc.
+// ****************************************************************************
+
+@mixin bg_gradient($color, $direction:true) {
+    $gradientSlope: 7;
+    // The difference in gradient shades
+
+    $lighterGradientColor: $color;
+    $darkerGradientColor: darken($color, $gradientSlope);
+
+    @if $direction != true {
+        $lighterGradientColor: darken($color, $gradientSlope);
+        $darkerGradientColor: $color;
+    }
+
+    background: $color;
+    background:-moz-linear-gradient(top, $lighterGradientColor 0%,
+        $darkerGradientColor 100%);
+    background:-webkit-gradient(linear,left top,left bottom,color-stop(0%,
+        $color),color-stop(100%, $darkerGradientColor));
+    background:-webkit-linear-gradient(top, $lighterGradientColor 0%,
+        $darkerGradientColor 100%);
+    background:-o-linear-gradient(top, $lighterGradientColor 0%,
+        $darkerGradientColor 100%);
+    background:-ms-linear-gradient(top,$lighterGradientColor 0%,
+        $darkerGradientColor 100%);
+    background:linear-gradient(top, $lighterGradientColor 0%,
+        $darkerGradientColor 100%);
+}
+
+@mixin transition($attribute: all, $length: 1s, $easing: ease-in-out) {
+    -moz-transition:    $attribute $length $easing;
+    -o-transition:      $attribute $length $easing;
+    -webkit-transition: $attribute $length $easing;
+    -ms-transition:     $attribute $length $easing;
+    transition:         $attribute $length $easing;
+}
+
+// Box-Shadow: Down and right is positive.
+@mixin box-shadow($x: 2px, $y: 2px, $blur: 5px, $color: rgba(0,0,0,.4), $inset: "") {
+    @if ($inset != "") {
+        -webkit-box-shadow: $inset $x $y $blur $color;
+        -moz-box-shadow:    $inset $x $y $blur $color;
+        box-shadow:         $inset $x $y $blur $color;
+    } @else {
+        -webkit-box-shadow: $x $y $blur $color;
+        -moz-box-shadow:    $x $y $blur $color;
+        box-shadow:         $x $y $blur $color;
+    }
+}
+
+@mixin border-shadow($top: 0, $right: 0, $bottom: 0, $left: 0) {
+    border: 0 solid $lightGrey;
+    border-top-width: $top;
+    border-right-width: $right;
+    border-bottom-width: $bottom;
+    border-left-width: $left;
+}
+
+@mixin border-radius($radius: 5px) {
+    -moz-border-radius:    $radius;
+    -webkit-border-radius: $radius;
+    border-radius:         $radius;
+}
+
+@mixin border-radius-separate($topLeftRadius: 5px, $topRightRadius: 5px,
+    $bottomLeftRadius: 5px, $bottomRightRadius: 5px) {
+
+    -webkit-border-top-left-radius:     $topLeftRadius;
+    -webkit-border-top-right-radius:    $topRightRadius;
+    -webkit-border-bottom-right-radius: $bottomRightRadius;
+    -webkit-border-bottom-left-radius:  $bottomLeftRadius;
+
+    -moz-border-radius-topleft:     $topLeftRadius;
+    -moz-border-radius-topright:    $topRightRadius;
+    -moz-border-radius-bottomright: $bottomRightRadius;
+    -moz-border-radius-bottomleft:  $bottomLeftRadius;
+
+    border-top-left-radius:     $topLeftRadius;
+    border-top-right-radius:    $topRightRadius;
+    border-bottom-right-radius: $bottomRightRadius;
+    border-bottom-left-radius:  $bottomLeftRadius;
+}
+
+@mixin background-sizing($value) {
+    -webkit-background-size:  $value;
+    -moz-background-size:     $value;
+    -o-background-size:       $value;
+    background-size:          $value;
+}

@@ -1,0 +1,90 @@
+// ****************************************************************************
+// Layout Base Styling
+// This scss file is only for the use of setting the basic styling of all
+// overarching layouts including html, body, wrappers, etc.
+// ****************************************************************************
+
+// Color of the footer and header
+body  {
+    background-color: $bgColor1;
+}
+
+// Container within .content that centers and creates whitespace
+.wrapper  {
+    width: $contentWidth;
+    margin: 0 auto;
+    position: relative;
+}
+
+.vc-parent {
+    display: table;
+    height: 100%;
+}
+
+.vc-child {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+// Actual body of the page where copy, etc goes
+.content  {
+    width: 100%;
+    min-width: $contentWidth;
+    position: relative;
+    background-color: $bgColor2;
+    margin: 0 auto;
+    padding-top: 30px;
+}
+
+.copy-left {
+    width: 55%;
+    float: left;
+}
+
+.copy-right {
+    width: 60%;
+    float: right;
+}
+
+// Horizontal Rule
+.hr  {
+    border-top: 1px solid $offWhite;
+    margin-top: 10px;
+    padding: 20px 0 0;
+}
+
+// Clear fix for floating element height problems
+.clear-fix {
+    clear: both;
+    height: 20px;
+}
+
+.center {
+    text-align: center;
+}
+
+/* FLASHES */
+.flashes  {
+    width: 60%;
+    display: block;
+    margin: 0 auto;
+    p {
+        padding: 5px 0;
+        text-align: center;
+        @include border-radius(3px);
+    }
+    .alert  {
+        background-color: $errorBg;
+        border: 1px solid $errorBorder;
+    }
+    .notice {
+        background-color: $successBg;
+        border: 1px solid $successBorder;
+    }
+}
+
+@media print {
+    header, footer, form, input button, a.button {
+        display: none;
+    }
+}

@@ -1,0 +1,197 @@
+// ****************************************************************************
+// Font Definitions
+// This scss file is only for the use of defining font faces.
+// ****************************************************************************
+
+@font-face {
+    font-family: 'SansFont1';
+    src: url('open-sans/Bold Italic/OpenSans-BoldItalic-webfont.eot');
+    src: url('open-sans/Bold Italic/OpenSans-BoldItalic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('open-sans/Bold Italic/OpenSans-BoldItalic-webfont.woff') format('woff'),
+         url('open-sans/Bold Italic/OpenSans-BoldItalic-webfont.ttf') format('truetype'),
+         url('open-sans/Bold Italic/OpenSans-BoldItalic-webfont.svg#open_sansbold_italic') format('svg');
+    font-weight: 700;
+    font-style: italic;
+
+}
+
+@font-face {
+    font-family: 'SansFont1';
+    src: url('open-sans/Bold/OpenSans-Bold-webfont.eot');
+    src: url('open-sans/Bold/OpenSans-Bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('open-sans/Bold/OpenSans-Bold-webfont.woff') format('woff'),
+         url('open-sans/Bold/OpenSans-Bold-webfont.ttf') format('truetype'),
+         url('open-sans/Bold/OpenSans-Bold-webfont.svg#open_sansbold') format('svg');
+    font-weight: 700;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'SansFont1';
+    src: url('open-sans/Extra Bold Italic/OpenSans-ExtraBoldItalic-webfont.eot');
+    src: url('open-sans/Extra Bold Italic/OpenSans-ExtraBoldItalic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('open-sans/Extra Bold Italic/OpenSans-ExtraBoldItalic-webfont.woff') format('woff'),
+         url('open-sans/Extra Bold Italic/OpenSans-ExtraBoldItalic-webfont.ttf') format('truetype'),
+         url('open-sans/Extra Bold Italic/OpenSans-ExtraBoldItalic-webfont.svg#open_sansextrabold_italic') format('svg');
+    font-weight: 900;
+    font-style: italic;
+
+}
+
+@font-face {
+    font-family: 'SansFont1';
+    src: url('open-sans/Extra Bold/OpenSans-ExtraBold-webfont.eot');
+    src: url('open-sans/Extra Bold/OpenSans-ExtraBold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('open-sans/Extra Bold/OpenSans-ExtraBold-webfont.woff') format('woff'),
+         url('open-sans/Extra Bold/OpenSans-ExtraBold-webfont.ttf') format('truetype'),
+         url('open-sans/Extra Bold/OpenSans-ExtraBold-webfont.svg#open_sansextrabold') format('svg');
+    font-weight: 900;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'SansFont1';
+    src: url('open-sans/Italic/OpenSans-Italic-webfont.eot');
+    src: url('open-sans/Italic/OpenSans-Italic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('open-sans/Italic/OpenSans-Italic-webfont.woff') format('woff'),
+         url('open-sans/Italic/OpenSans-Italic-webfont.ttf') format('truetype'),
+         url('open-sans/Italic/OpenSans-Italic-webfont.svg#open_sansitalic') format('svg');
+    font-weight: normal;
+    font-style: italic;
+
+}
+
+@font-face {
+    font-family: 'SansFont1';
+    src: url('open-sans/Light Italic/OpenSans-LightItalic-webfont.eot');
+    src: url('open-sans/Light Italic/OpenSans-LightItalic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('open-sans/Light Italic/OpenSans-LightItalic-webfont.woff') format('woff'),
+         url('open-sans/Light Italic/OpenSans-LightItalic-webfont.ttf') format('truetype'),
+         url('open-sans/Light Italic/OpenSans-LightItalic-webfont.svg#open_sanslight_italic') format('svg');
+    font-weight: 300;
+    font-style: italic;
+
+}
+
+@font-face {
+    font-family: 'SansFont1';
+    src: url('open-sans/Light/OpenSans-Light-webfont.eot');
+    src: url('open-sans/Light/OpenSans-Light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('open-sans/Light/OpenSans-Light-webfont.woff') format('woff'),
+         url('open-sans/Light/OpenSans-Light-webfont.ttf') format('truetype'),
+         url('open-sans/Light/OpenSans-Light-webfont.svg#open_sanslight') format('svg');
+    font-weight: 300;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'SansFont1';
+    src: url('open-sans/Regular/OpenSans-Regular-webfont.eot');
+    src: url('open-sans/Regular/OpenSans-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('open-sans/Regular/OpenSans-Regular-webfont.woff') format('woff'),
+         url('open-sans/Regular/OpenSans-Regular-webfont.ttf') format('truetype'),
+         url('open-sans/Regular/OpenSans-Regular-webfont.svg#open_sansregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'SansFont1';
+    src: url('open-sans/Semi Bold Italic/OpenSans-SemiboldItalic-webfont.eot');
+    src: url('open-sans/Semi Bold Italic/OpenSans-SemiboldItalic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('open-sans/Semi Bold Italic/OpenSans-SemiboldItalic-webfont.woff') format('woff'),
+         url('open-sans/Semi Bold Italic/OpenSans-SemiboldItalic-webfont.ttf') format('truetype'),
+         url('open-sans/Semi Bold Italic/OpenSans-SemiboldItalic-webfont.svg#open_sanssemibold_italic') format('svg');
+    font-weight: 500;
+    font-style: italic;
+
+}
+
+@font-face {
+    font-family: 'SansFont1';
+    src: url('open-sans/Semi Bold/OpenSans-Semibold-webfont.eot');
+    src: url('open-sans/Semi Bold/OpenSans-Semibold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('open-sans/Semi Bold/OpenSans-Semibold-webfont.woff') format('woff'),
+         url('open-sans/Semi Bold/OpenSans-Semibold-webfont.ttf') format('truetype'),
+         url('open-sans/Semi Bold/OpenSans-Semibold-webfont.svg#open_sanssemibold') format('svg');
+    font-weight: 500;
+    font-style: normal;
+
+}
+
+
+@font-face {
+    font-family: 'SerifFont1';
+    src: url('aleo/aleo-bold-webfont.eot');
+    src: url('aleo/aleo-bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('aleo/aleo-bold-webfont.woff') format('woff'),
+         url('aleo/aleo-bold-webfont.ttf') format('truetype'),
+         url('aleo/aleo-bold-webfont.svg#aleobold') format('svg');
+    font-weight: 700;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'SerifFont1';
+    src: url('aleo/aleo-bolditalic-webfont.eot');
+    src: url('aleo/aleo-bolditalic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('aleo/aleo-bolditalic-webfont.woff') format('woff'),
+         url('aleo/aleo-bolditalic-webfont.ttf') format('truetype'),
+         url('aleo/aleo-bolditalic-webfont.svg#aleobolditalic') format('svg');
+    font-weight: 700;
+    font-style: italic;
+
+}
+
+@font-face {
+    font-family: 'SerifFont1';
+    src: url('aleo/aleo-italic-webfont.eot');
+    src: url('aleo/aleo-italic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('aleo/aleo-italic-webfont.woff') format('woff'),
+         url('aleo/aleo-italic-webfont.ttf') format('truetype'),
+         url('aleo/aleo-italic-webfont.svg#aleoitalic') format('svg');
+    font-weight: normal;
+    font-style: italic;
+
+}
+
+@font-face {
+    font-family: 'SerifFont1';
+    src: url('aleo/aleo-light-webfont.eot');
+    src: url('aleo/aleo-light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('aleo/aleo-light-webfont.woff') format('woff'),
+         url('aleo/aleo-light-webfont.ttf') format('truetype'),
+         url('aleo/aleo-light-webfont.svg#aleolight') format('svg');
+    font-weight: 300;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'SerifFont1';
+    src: url('aleo/aleo-lightitalic-webfont.eot');
+    src: url('aleo/aleo-lightitalic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('aleo/aleo-lightitalic-webfont.woff') format('woff'),
+         url('aleo/aleo-lightitalic-webfont.ttf') format('truetype'),
+         url('aleo/aleo-lightitalic-webfont.svg#aleolightitalic') format('svg');
+    font-weight: 300;
+    font-style: italic;
+
+}
+
+@font-face {
+    font-family: 'SerifFont1';
+    src: url('aleo/aleo-regular-webfont.eot');
+    src: url('aleo/aleo-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('aleo/aleo-regular-webfont.woff') format('woff'),
+         url('aleo/aleo-regular-webfont.ttf') format('truetype'),
+         url('aleo/aleo-regular-webfont.svg#aleoregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}

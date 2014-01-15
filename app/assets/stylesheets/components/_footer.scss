@@ -1,0 +1,43 @@
+// ****************************************************************************
+// Footer Base Styling
+// This scss file is only for the use of setting the styling of the footer.
+// ****************************************************************************
+
+footer  {
+    height: 60px;
+    position: relative;
+    background-color: $offBlack;
+    width: 100%;
+    margin-top: 0px;
+    padding-top: 20px;
+    p {
+    color: #FFFFFF;
+    font-size: 12px;
+    text-align: center;
+    }
+    ul  {
+        padding: 0;
+        margin: 4px 0;
+        text-align: center;
+        li  {
+            display: inline-block;
+            zoom: 1; 
+            *display: inline;
+            padding: 0 10px;
+            border-right: solid 1px #FFFFFF;
+            width: 200px;
+            a {
+                color: #FFFFFF;
+                font-size: 14px;
+                text-align: center;
+            }
+            &:last-child  {
+                border: 0;
+            }
+        }
+    }
+}
+.footer-gap  {
+    padding-bottom: 30px;
+}
+

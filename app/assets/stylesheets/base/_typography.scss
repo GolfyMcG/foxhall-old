@@ -1,0 +1,109 @@
+// ****************************************************************************
+// Typography Base Styling
+// This scss file is only for the use of setting the basic styling of all
+// typography. This includes headers, paragraphs, lists, links, and tables.
+// ****************************************************************************
+
+// Headers
+h1  {
+    font-family: 'SerifFont1', Georgia, Serif;
+    font-weight: normal;
+    font-size: 45px;
+    word-spacing: 0.1em;
+    letter-spacing: 0.03em;
+    margin: 0.5em 0 0.25em 0;
+    color:$headerColor1;
+}
+
+h2  {
+    font-family: 'SerifFont1', Georgia, Serif;
+    font-weight: normal;
+    font-size: 35px;
+    word-spacing: -0.04em;
+    letter-spacing: 0.03em;
+    margin-bottom: 0.3em;
+    color:$headerColor1;
+}
+
+h3  {
+    font-family: 'SerifFont1', Georgia, Serif;
+    font-size: 30px;
+    word-spacing: -0.04em;
+    margin-top: 0.3em;
+    margin-bottom: 0.2em;
+    letter-spacing: 0.04em;
+    line-height: 1.2em;
+    color:$headerColor1;
+}
+
+h4  {
+    font-family: 'SerifFont1', Georgia, Serif;
+    font-size: 24px;
+    font-weight: 300;
+    word-spacing: -0.04em;
+    margin-top: 10px;
+    margin-bottom: 5px;
+    letter-spacing: 0.04em;
+    line-height: 1.2em;
+    color:$headerColor1;
+}
+
+h5  {
+    font-family: 'SerifFont1', Georgia, Serif;
+    font-size: 20px;
+    margin: 0.25em;
+    letter-spacing: 0.1em;
+    color:$headerColor1;
+}
+
+// Paragraphs
+p, label {
+    font-family: 'SansFont1', Arial, Sans-Serif;
+    font-size: 16px;
+    line-height: 1.4em;
+    margin-bottom: 1.25em;
+    text-align:justify;
+    color: $offBlack;
+}
+
+// Lists
+ol li, ul li  {
+    font-family: 'SansFont1', Arial, Sans-Serif;
+    font-size: 16px;
+    line-height: 1.4em;
+    margin-bottom: 7px;
+    color: $offBlack;
+}
+
+// Links
+a {
+    font-family: 'SansFont1', Arial, Sans-Serif;
+    text-decoration:none;
+    color: $primaryColor2;
+    &:visited {
+        text-decoration:none;
+    }
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+// Tables
+table {
+    border-collapse: collapse;
+}
+
+th, td  {
+    font-family: 'SansFont1', Arial, Sans-Serif;
+    font-size: 16px;
+    line-height: 1.4em;
+    margin-bottom: 20px;
+    text-align:justify;
+    color: $offBlack;
+    padding: 1px 3px;
+}
+
+th  {
+    color: #FFFFFF;
+    background-color: lighten($offBlack, 10);
+}

@@ -1,0 +1,18 @@
+// ****************************************************************************
+// Sizing Helpers
+// These are the helpers used for sizing various components of the layout.
+// ****************************************************************************
+
+$headerFontSize: 14px; // This is the font size of the header
+$headerFontPortion: 0.3; // This is the portion of the header which is font - maintains a proptional fit of the font in the header. Higher => narrow padding, Lower => wide padding
+$headerPadding: ( 20px * (1 - $headerFontPortion))/2;
+$headerHeight: $headerFontSize + 2 * ( $headerPadding );
+$headerSidePadding: 17px;
+$headerWidth: ($contentWidth - 25)/5; //Total width divided by number of buttons
+
+@mixin columns($n) {
+  width: 100%/$n;
+  box-sizing: border-box;
+  float: left;
+  padding: 0.5%;
+}
