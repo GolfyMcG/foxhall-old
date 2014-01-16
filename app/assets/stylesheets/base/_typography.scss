@@ -6,9 +6,9 @@
 
 // Headers
 h1  {
-    font-family: 'SerifFont1', Georgia, Serif;
+    font-family: 'SansFont1', Arial, Serif;
     font-weight: normal;
-    font-size: 45px;
+    font-size: 48px;
     word-spacing: 0.1em;
     letter-spacing: 0.03em;
     margin: 0.5em 0 0.25em 0;
@@ -22,17 +22,18 @@ h2  {
     word-spacing: -0.04em;
     letter-spacing: 0.03em;
     margin-bottom: 0.3em;
-    color:$headerColor1;
+    color:$headerColor2;
 }
 
 h3  {
-    font-family: 'SerifFont1', Georgia, Serif;
+    font-family: 'SansFont1', Arial, Serif;
     font-size: 30px;
     word-spacing: -0.04em;
     margin-top: 0.3em;
     margin-bottom: 0.2em;
     letter-spacing: 0.04em;
     line-height: 1.2em;
+    font-weight: normal;
     color:$headerColor1;
 }
 
@@ -45,7 +46,7 @@ h4  {
     margin-bottom: 5px;
     letter-spacing: 0.04em;
     line-height: 1.2em;
-    color:$headerColor1;
+    color:$headerColor2;
 }
 
 h5  {

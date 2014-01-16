@@ -3,41 +3,33 @@
 // This scss file is only for the use of setting the styling of the footer.
 // ****************************************************************************
 
-footer  {
-    height: 60px;
-    position: relative;
-    background-color: $offBlack;
+.footer-gap {
+    display: block;
+    height: 40px;
     width: 100%;
-    margin-top: 0px;
-    padding-top: 20px;
-    p {
-    color: #FFFFFF;
-    font-size: 12px;
-    text-align: center;
+}
+
+footer {
+    padding: 20px 0;
+    background-color: $primaryColor1;
+    height: 80px;
+    display: block;
+    li, p, a {
+        color: $offWhite;
     }
-    ul  {
-        padding: 0;
-        margin: 4px 0;
-        text-align: center;
-        li  {
-            display: inline-block;
-            zoom: 1; 
-            *display: inline;
-            padding: 0 10px;
-            border-right: solid 1px #FFFFFF;
-            width: 200px;
-            a {
-                color: #FFFFFF;
-                font-size: 14px;
-                text-align: center;
-            }
-            &:last-child  {
-                border: 0;
+    article{
+        display: inline-block;
+        width: 25%;
+        float: left;
+        ul {
+            list-style-type: none;
+            li {
+                padding-left: 7px;
+                &.title {
+                    padding: 0;
+                    font-size: 18px;
+                }
             }
         }
     }
 }
-.footer-gap  {
-    padding-bottom: 30px;
-}
-

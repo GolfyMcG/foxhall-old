@@ -10,6 +10,19 @@ $headerHeight: $headerFontSize + 2 * ( $headerPadding );
 $headerSidePadding: 17px;
 $headerWidth: ($contentWidth - 25)/5; //Total width divided by number of buttons
 
+$homeListContainerWidth: 600px;
+$homeListIconRows: 3;
+$homeListIconColumns: 3;
+$homeListIconPadding: 5px;
+$homeListIconBorder: 0px;
+$homeListIconWidth: ($homeListContainerWidth)/ $homeListIconColumns - $homeListIconPadding*2 - $homeListIconBorder*2;
+$homeListIconHeight: $homeListIconWidth*0.70;
+$homeListContainerHeight: ($homeListIconHeight+$homeListIconPadding*2+$homeListIconBorder*2)*$homeListIconRows;
+
+$featureTypeIconMargin: 20px;
+$featureTypeIconBorder: 2px;
+$featureTypeIconWidth: $contentWidth*0.5 - $featureTypeIconMargin*2 - $featureTypeIconBorder*2;
+
 @mixin columns($n) {
   width: 100%/$n;
   box-sizing: border-box;

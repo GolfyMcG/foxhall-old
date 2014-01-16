@@ -5,7 +5,7 @@
 // ****************************************************************************
 
 // Color of the footer and header
-body  {
+html  {
     background-color: $bgColor1;
 }
 
@@ -47,16 +47,17 @@ body  {
 }
 
 // Horizontal Rule
-.hr  {
-    border-top: 1px solid $offWhite;
-    margin-top: 10px;
-    padding: 20px 0 0;
+.line-break {
+    border-bottom: 1px solid $primaryColor3;
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 15px;
 }
 
 // Clear fix for floating element height problems
 .clear-fix {
     clear: both;
-    height: 20px;
+    height: 15px;
 }
 
 .center {

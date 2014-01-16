@@ -1,0 +1,147 @@
+#page-pages-home {
+  .content {
+        article {
+            header {
+                padding-top: 20px;
+            }
+            &#communities {
+                header  {
+                    text-align: center;
+                }
+                #community-map {
+                  display: block;
+                  width: 80%;
+                  height: 400px;
+                  margin: 10px auto;
+                  background-color: $primaryColor3;
+                }
+            }
+            &#plans {
+                #floor-plan-container {
+                    height: 410px;
+                    margin-top: 20px;
+                    .collection-icon {
+                        display: block;
+                        margin: 15px 0;
+                        width: 320px;
+                        background-color: #FFFFFF;
+                        text-align: right;
+                        background-image: url('map_logo.png');
+                        background-position: 15px center;
+                        background-repeat: no-repeat;
+                        border: 1px solid darken($offWhite, 10);
+                        border-bottom-width: 2px;
+                        @include transition(background-color, 0.2s);
+                        float: left;
+                        cursor: pointer;
+                        &.active-icon {
+                            background-color: darken(#FFFFFF, 10);
+                        }
+                        &:hover {
+                            background-color: darken(#FFFFFF, 10);
+                        }
+                        h3 {
+                            padding: 25px 15px 20px 0;
+                        }
+                    }
+                    .home-list {
+                        display: none;
+                        width: $homeListContainerWidth;
+                        float: right;
+                        height: $homeListContainerHeight;
+                        &.active-list {
+                          display: block;
+                        }
+                        ul {
+                            list-style-type: none;
+                            a {
+                              text-decoration: none;
+                              display: inline-block;
+                              width: $homeListIconWidth;
+                              margin: $homeListIconPadding;
+                              height: $homeListIconHeight;
+                              border: $homeListIconBorder solid #FFFFFF;
+                              float: left;
+                              background-image: url('map_logo.png');
+                              background-position: center center;
+                              background-repeat: no-repeat;
+                              li {
+                                  text-align: center;
+                                  width: 100%;
+                                  height: 1em;
+                                  visibility: hidden;
+                                  opacity: 0;
+                                  padding: 4px 0;
+                                  background-color: lighten(black, 20);
+                                  background-color: rgba(lighten(black, 20), 0.7);
+                                  color: white;
+                                  @include transition(all, 0.2s);
+                              }
+                              &:hover li {
+                                  opacity: 1;
+                                  visibility: visible;
+                              }
+                            }
+                        }
+                    }
+                }
+            }
+            &#features {
+                header {
+                    text-align: right;
+                }
+                ul.feature-types {
+                    list-style-type:none;
+                    a {
+                        text-decoration: none;
+                        background-image: url('map_logo.png');
+                        background-position: center center;
+                        background-repeat: no-repeat;
+                        display: inline-block;
+                        float: left;
+                        font-size: 22px;
+                        text-align: center;
+                        width: $featureTypeIconWidth;
+                        height: 1em;
+                        padding: 25px 0;
+                        margin: 15px $featureTypeIconMargin;
+                        border: $featureTypeIconBorder solid darken($offWhite, 10);
+                        border-bottom-width: 2px;
+                        @include transition(all, 0.2s);
+                        &:hover {
+                            border-color: $primaryColor2;
+                        }
+                        li {
+                            display: inline-block;
+                            color: white;
+                            height: 1em;
+                            padding: 3px 20px;
+                            background-color: lighten(black,30);
+                            background-color: rgba(lighten(black,30), 0.6);
+                        }
+                    }
+                }
+            }
+            &#contact {
+                header {
+                    text-align: center;
+                }
+                .new_message {
+                    display: block;
+                    width: 80%;
+                    margin: 0px auto;
+                    input, textarea {
+                        display: block;
+                        margin: 15px auto;
+                        width: 400px;
+                        font-size: 22px;
+                        padding: 10px 20px;
+                    }
+                    .btn {
+                        width: 200px;
+                    }
+                }
+            }
+        }
+    }
+}

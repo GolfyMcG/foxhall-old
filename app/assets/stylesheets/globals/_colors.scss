@@ -39,7 +39,7 @@ $offWhite: darken(#FFFFFF, 5);
 //================================
 
 // Button Colors
-$buttonDefaultColor: $primaryColor1;
+$buttonDefaultColor: $primaryColor2;
 $buttonDarkColor: darken($buttonDefaultColor, 4);
 $buttonLightColor: lighten($buttonDefaultColor, 5);
 
@@ -57,6 +57,7 @@ $successBg: lighten($successBorder, 10);
 
 // Typography Colors
 $headerColor1: $offBlack;
+$headerColor2: $primaryColor1;
 
 // Input Colors
 $inputBorderInactive: darken($offWhite, 10);

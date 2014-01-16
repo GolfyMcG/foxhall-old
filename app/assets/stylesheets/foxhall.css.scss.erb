@@ -13,9 +13,8 @@
 1.1 Variable Definitions
 1.2 Fonts
 1.3 Buttons
-1.4 Header Tags
-1.5 Additional Typography
-1.6 Forms
+1.4 Typography
+1.5 Forms
 
 2. Layout
 2.1 General
@@ -24,8 +23,11 @@
 
 */
 
-/* === 1.1 Variable Definitions === */
+/*======================= */
+/*=== 1. Basic Styles === */
+/*======================= */
 
+/* === 1.1 Variable Definitions === */
 @import 'globals/reset';
 @import 'globals/colors';
 @import 'globals/variables';
@@ -33,473 +35,36 @@
 @import 'globals/compatibility_helpers';
 
 /*=== 1.2 Fonts === */
-@font-face  {
-    font-family: 'SerifFont1';
-    src:url('<%= asset_path 'Bodoni-Normal.ttf' %>') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-}
+@import 'globals/fonts';
 
-@font-face  {
-    font-family: 'SerifFont1';
-    src:url('<%= asset_path 'Bodoni-Bold.ttf' %>') format('truetype');
-    font-weight: bold;
-    font-style: normal;
-}
+/*=== 1.3 Buttons === */
+@import 'base/buttons';
 
-@font-face  {
-    font-family: 'SerifFont1';
-    src:url('<%= asset_path 'Bodoni-Italic.ttf' %>') format('truetype');
-    font-weight: normal;
-    font-style: italic;
-}
+/*=== 1.4 Typography === */
+@import 'base/typography';
 
-@font-face  {
-    font-family: 'SerifFont1';
-    src:url('<%= asset_path 'Bodoni-Bold-Italic.ttf' %>') format('truetype');
-    font-weight: bold;
-    font-style: italic;
-}
+/*=== 1.5 Forms === */
+@import 'base/forms';
 
-@font-face  {
-    font-family: 'SansFont1';
-    src:url('<%= asset_path 'Helvetica-Normal.ttf' %>') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-}
+/*======================= */
+/*=== 2. Layout === */
+/*======================= */
 
-@font-face  {
-    font-family: 'SansFont1';
-    src:url('<%= asset_path 'Helvetica-Italic.ttf' %>') format('truetype');
-    font-weight: normal;
-    font-style: italic;
-}
+/* === 2.1 General === */
+@import 'base/layout';
 
-@font-face  {
-    font-family: 'SansFont1';
-    src:url('<%= asset_path 'Helvetica-Bold.ttf' %>') format('truetype');
-    font-weight: bold;
-    font-style: normal;
-}
+/* === 2.2 Header === */
+@import 'components/header';
 
-/*=== 1.3 Sizes === */
-$wrapperWidth: 1000px;
+/* === 2.3 Footer === */
+@import 'components/footer';
 
-$homeListContainerWidth: 600px;
-$homeListIconRows: 3;
-$homeListIconColumns: 3;
-$homeListIconPadding: 5px;
-$homeListIconBorder: 0px;
-$homeListIconWidth: ($homeListContainerWidth)/ $homeListIconColumns - $homeListIconPadding*2 - $homeListIconBorder*2;
-$homeListIconHeight: $homeListIconWidth*0.70;
-$homeListContainerHeight: ($homeListIconHeight+$homeListIconPadding*2+$homeListIconBorder*2)*$homeListIconRows;
+/* === 2.4 Maps === */
+@import 'components/map';
 
-$featureTypeIconMargin: 20px;
-$featureTypeIconBorder: 2px;
-$featureTypeIconWidth: $wrapperWidth*0.5 - $featureTypeIconMargin*2 - $featureTypeIconBorder*2;
+/*=================== */
+/*=== 3. Sections === */
+/*=================== */
 
-/*======================== */
-/*=== 2. Default Items === */
-/*======================== */
-/*=== 2.1 Headers Tags === */
-h1 {
-    color: $offBlack;
-    font-family: 'SansFont1', sans-serif;
-    line-height: 1.2em;
-    font-size: 48px;
-    margin: 15px 0 0 0;
-}
-h2 {
-    color: $primaryColor1;
-    font-family: 'SerifFont1', serif;
-    line-height: 1.2em;
-}
-h3 {
-    color: $offBlack;
-    font-family: 'SansFont1', sans-serif;
-    font-size: 24px;
-    line-height: 1.2em;
-    font-weight: normal;
-}
-h4 {
-    color: $primaryColor1;
-    font-family: 'SerifFont1', serif;
-    line-height: 1.2em;
-}
-h5 {
-    color: $offBlack;
-    font-family: 'SerifFont1', serif;
-    line-height: 1.2em;
-}
-
-/*=== 2.2 Body Tags === */
-p {
-    color: $offBlack;
-    font-family: 'SansFont1', sans-serif;
-    line-height: 1.2em;
-}
-
-li {
-    color: $offBlack;
-    font-family: 'SansFont1', sans-serif;
-    line-height: 1.2em;
-}
-
-/*=== 2.3 Additional Typography === */
-a {
-    color: $primaryColor2;
-    font-family: 'SansFont1', sans-serif;
-    line-height: 1.2em;
-}
-/*=== 2.4 Forms === */
-form {
-}
-input, textarea {
-    color: $offBlack;
-    font-family: 'SansFont1', sans-serif;
-    line-height: 1.2em;
-    font-size: 18px;
-    width: 250px;
-    border: 0;
-    margin: 10px;
-    padding: 5px 10px;
-    border: 2px solid $primaryColor2;
-}
-textarea {
-    height: 5em;
-}
-
-/*=== 2.5 Buttons === */
-button, .button, .btn, input[type="submit"] {
-    display: block;
-    width: 200px;
-    height: 2em;
-    cursor: pointer;
-    color: #FFFFFF;
-    -webkit-box-shadow: 0 1px 0 $primaryColor2, inset 0 1px 0 lighten($primaryColor2, 20);
-    box-shadow: 0 1px 0 $primaryColor2, inset 0 1px 0 lighten($primaryColor2, 20);
-    background-color: $primaryColor2;
-}
-
-/*=== 2.6 Property Classes === */
-.fixed  {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    z-index: 1;
-}
-
-.center {
-    text-align: center;
-}
-
-.line-break {
-    border-bottom: 1px solid $primaryColor3;
-    display: inline-block;
-    width: 100%;
-    margin-bottom: 15px;
-}
-
-/*================= */
-/*=== 3. Layout === */
-/*================= */
-/*=== 3.1 General === */
-html {
-    background-color: $primaryColor1;
-}
-body {
-}
-.wrapper {
-    width: $wrapperWidth;
-    margin: 0 auto;
-    position: relative;
-}
-.clear-fix {
-    clear: both;
-    height: 15px;
-}
-
-/*=== 3.2 Header === */
-header {
-    #hero {
-        position: relative;
-        top: 0px;
-        width: 100%;
-        height: 520px;
-        background-image: url(<%= asset_path 'home-cover-photo.png' %>);
-        background-position: center center;
-        background-repeat: no-repeat;
-        -webkit-background-size: cover;
-        -moz-background-size: cover;
-        -o-background-size: cover;
-        background-size: cover;
-        #logo {
-            background-image: url(<%= asset_path 'logo.png' %>);
-            background-position: center center;
-            background-repeat: no-repeat;
-            display: block;
-            width: 500px;
-            height: 180px;
-            position:relative;
-            top: 0;
-            left: 0;
-        }
-    }
-}
-/*=== 3.3 Nav === */
-nav {
-    background-color: $primaryColor1;
-    border-bottom: 2px solid darken($offWhite,20);
-    ul {
-        list-style-type: none;
-        li {
-            display: inline-block;
-            width: 19.5%;
-            font-size: 20px;
-            font-weight: 500;
-            color: $offWhite;
-            text-align: center;
-            -moz-text-shadow: 1px 1px lighten(#000000, 30);
-            text-shadow: 1px 1px lighten(#000000, 30);
-            cursor: pointer;
-            -webkit-transition: background-color 0.2s ease-in-out;
-            -moz-transition: background-color 0.2s ease-in-out;
-            transition: background-color 0.2s ease-in-out;
-            &:hover, &.active {
-                background-color: $primaryColor2;
-            }
-            a {
-                width: 100%;
-                height: 1.1em;
-                padding: 3px 0;
-                text-decoration: none;
-                display: block;
-                color: $offWhite;
-            }
-        }
-    }
-}
-
-#nav-placeholder {
-    height: 20px;
-}
-
-/*=== 3.4 Content === */
-#content {
-    background-color: $offWhite;
-    min-height: 400px;
-    display: block;
-}
-
-/*=== 3.5 Footer === */
-.footer-gap {
-    display: block;
-    height: 40px;
-    width: 100%;
-}
-footer {
-    padding: 20px 0;
-    background-color: $primaryColor1;
-    height: 80px;
-    display: block;
-    li, p, a {
-        color: $offWhite;
-    }
-    article{
-        display: inline-block;
-        width: 25%;
-        float: left;
-        ul {
-            list-style-type: none;
-            li {
-                padding-left: 7px;
-                &.title {
-                    padding: 0;
-                    font-size: 18px;
-                }
-            }
-        }
-    }
-}
-
-/*=== 3.6 Other Layouts === */
-#community-map {
-    .infoWindow {
-        width: 450px;
-        h1 {
-          text-align: left;
-          margin: 5px 0 0 0;
-          font-size: 25px;
-          float: left;
-        }
-        .infoAddress {
-            display: block;
-            float: right;
-            font-weight: bold;
-            font-size: 14px;
-            margin: 8px 0;
-            margin-left: 10px;
-        }
-        .infoDescription {
-            font-size: 14px;
-            clear: both;
-        }
-    }
-}
-
-/*==================== */
-/*=== 4. Home Page === */
-/*==================== */
-#page-pages-home {
-  #content {
-        article {
-            header {
-                padding-top: 20px;
-            }
-            &#communities {
-                header  {
-                    text-align: center;
-                }
-                #community-map {
-                  display: block;
-                  width: 80%;
-                  height: 400px;
-                  margin: 10px auto;
-                  background-color: $primaryColor3;
-                }
-            }
-            &#plans {
-                #floor-plan-container {
-                    height: 410px;
-                    margin-top: 20px;
-                    .collection-icon {
-                        display: block;
-                        margin: 15px 0;
-                        width: 320px;
-                        background-color: #FFFFFF;
-                        text-align: right;
-                        background-image: url(<%= asset_path 'map_logo.png' %>);
-                        background-position: 15px center;
-                        background-repeat: no-repeat;
-                        border: 1px solid darken($offWhite, 10);
-                        border-bottom-width: 2px;
-                        -webkit-transition: background-color 0.2s ease-in-out;
-                        -moz-transition: background-color 0.2s ease-in-out;
-                        transition: background-color 0.2s ease-in-out;
-                        float: left;
-                        cursor: pointer;
-                        &.active-icon {
-                            background-color: darken(#FFFFFF, 10);
-                        }
-                        &:hover {
-                            background-color: darken(#FFFFFF, 10);
-                        }
-                        h3 {
-                            padding: 25px 15px 20px 0;
-                        }
-                    }
-                    .home-list {
-                        display: none;
-                        width: $homeListContainerWidth;
-                        float: right;
-                        height: $homeListContainerHeight;
-                        &.active-list {
-                          display: block;
-                        }
-                        ul {
-                            list-style-type: none;
-                            a {
-                              text-decoration: none;
-                              display: inline-block;
-                              width: $homeListIconWidth;
-                              margin: $homeListIconPadding;
-                              height: $homeListIconHeight;
-                              border: $homeListIconBorder solid #FFFFFF;
-                              float: left;
-                              background-image: url(<%= asset_path 'map_logo.png' %>);
-                              background-position: center center;
-                              background-repeat: no-repeat;
-                              li {
-                                  text-align: center;
-                                  width: 100%;
-                                  height: 1em;
-                                  visibility: hidden;
-                                  opacity: 0;
-                                  padding: 4px 0;
-                                  background-color: lighten(black, 20);
-                                  background-color: rgba(lighten(black, 20), 0.7);
-                                  color: white;
-                                  -webkit-transition: visibility 0.2s ease-in-out, opacity 0.2s ease-in-out;
-                                  -moz-transition: visibility 0.2s ease-in-out, opacity 0.2s ease-in-out;
-                                  transition: visibility 0.2s ease-in-out, opacity 0.2s ease-in-out;
-                              }
-                              &:hover li {
-                                  opacity: 1;
-                                  visibility: visible;
-                              }
-                            }
-                        }
-                    }
-                }
-            }
-            &#features {
-                header {
-                    text-align: right;
-                }
-                ul.feature-types {
-                    list-style-type:none;
-                    a {
-                        text-decoration: none;
-                        background-image: url(<%= asset_path 'map_logo.png' %>);
-                        background-position: center center;
-                        background-repeat: no-repeat;
-                        display: inline-block;
-                        float: left;
-                        font-size: 22px;
-                        text-align: center;
-                        width: $featureTypeIconWidth;
-                        height: 1em;
-                        padding: 25px 0;
-                        margin: 15px $featureTypeIconMargin;
-                        border: $featureTypeIconBorder solid darken($offWhite, 10);
-                        border-bottom-width: 2px;
-                        -webkit-transition: border 0.2s ease-in-out;
-                        -moz-transition: border 0.2s ease-in-out;
-                        transition: border 0.2s ease-in-out;
-                        &:hover {
-                            border-color: $primaryColor2;
-                        }
-                        li {
-                            display: inline-block;
-                            color: white;
-                            height: 1em;
-                            padding: 3px 20px;
-                            background-color: lighten(black,30);
-                            background-color: rgba(lighten(black,30), 0.6);
-                        }
-                    }
-                }
-            }
-            &#contact {
-                header {
-                    text-align: center;
-                }
-                .new_message {
-                    display: block;
-                    width: 80%;
-                    margin: 0px auto;
-                    input, textarea {
-                        display: block;
-                        margin: 15px auto;
-                        width: 400px;
-                        font-size: 22px;
-                        padding: 10px 20px;
-                    }
-                    .btn {
-                        width: 200px;
-                    }
-                }
-            }
-        }
-    }
-}
+/* === 3.1 Home === */
+@import 'sections/index';
