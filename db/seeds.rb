@@ -61,6 +61,6 @@ FeatureType.create([
   {name: "High Efficiency Homes"},
   {name: "Appealing Exteriors"},
   {name: "Interior Elegance"},
-  {name: "Customer Services and Commitment"},
+  {name: "Customer Services"},
   {name: "Green Features"}
 ])

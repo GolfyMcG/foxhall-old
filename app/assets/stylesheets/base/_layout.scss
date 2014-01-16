@@ -16,6 +16,12 @@ html  {
     position: relative;
 }
 
+@media (max-width: 1000px) {
+    .wrapper {
+        width: 100%;
+    }
+}
+
 .vc-parent {
     display: table;
     height: 100%;
@@ -29,11 +35,9 @@ html  {
 // Actual body of the page where copy, etc goes
 .content  {
     width: 100%;
-    min-width: $contentWidth;
     position: relative;
     background-color: $bgColor2;
     margin: 0 auto;
-    padding-top: 30px;
 }
 
 .copy-left {

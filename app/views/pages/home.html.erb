@@ -1,69 +1,86 @@
 <% provide(:title, "Home") %>
-<section class="wrapper">
-  <article id="communities" class="max-height">
-    <header>
-      <h1>Prime Locations</h1>
-      <div class="line-break"></div>
-      <h3>Foxhall Homes is building all over the Metro DC Area.</h3>
-    </header>
-    <%= content_tag :div, "", id: "community-map", data: {markers: community_map_markers } %>
-  </article>
 
-  <article id="plans" class="max-height">
-    <header>
-      <h1>Pick Any Floor Plan...</h1>
-      <div class="line-break"></div>
-      <h3>Browse our unique collections for your dream home.</h3>
-    </header>
-    <section id="floor-plan-container">
-      <% @collections.each do |collection| %>
-        <% collection_selector = collection.name.downcase == "city" ? "active-list" : "" %>
-        <%= "<div class='home-list #{collection.name.downcase}-collection #{collection_selector} '>".html_safe %>
-          <ul>
-            <% collection.homes.each do |home| %>
-              <% home_asset_url = image_path "homes/" + home.name.downcase.gsub(" ", "_") + ".jpg" %>
-              <%= link_to "<li> #{home.name}</li>".html_safe, home_path(home.id), { style: "background-image: url(#{home_asset_url});"} %>
-            <% end %>
-          </ul>
-        </div>
-      <% end %>
-      <% @collections.each do |collection| %>
-        <% collection_selector = collection.name.downcase == "city" ? "active-icon" : "" %>
-        <%= "<div class='collection-icon #{collection.name.downcase}-collection #{collection_selector} '
-               data-tab='.#{collection.name.downcase}-collection' ><h3>#{collection.name.titleize} Collection</h3></div>".html_safe %>
+<section id="communities" class="home-slide max-height">
+  <div class="wrapper vc-parent">
+    <div class="vc-child">
+      <header>
+        <h1>Prime Locations</h1>
+        <div class="line-break"></div>
+        <h3>Foxhall Homes is building all over the Metro DC Area.</h3>
+      </header>
+      <%= content_tag :div, "", id: "community-map", data: {markers: community_map_markers } %>
+      <a class="next-arrow" href="#plans"></a>
+    </div>
+  </div>
+</section>
+
+<section id="plans" class="home-slide max-height">
+  <div class="wrapper vc-parent">
+    <div class="vc-child">
+      <header>
+        <h1>Pick Any Floor Plan...</h1>
+        <div class="line-break"></div>
+        <h3>Browse our unique collections for your dream home.</h3>
+      </header>
+      <section id="floor-plan-container">
+        <% @collections.each do |collection| %>
+          <% collection_selector = collection.name.downcase == "city" ? "active-list" : "" %>
+          <%= "<div class='home-list #{collection.name.downcase}-collection #{collection_selector} '>".html_safe %>
+            <ul>
+              <% collection.homes.each do |home| %>
+                <% home_asset_url = image_path "homes/" + home.name.downcase.gsub(" ", "_") + ".jpg" %>
+                <%= link_to "<li> #{home.name}</li>".html_safe, home_path(home.id), { style: "background-image: url(#{home_asset_url});"} %>
+              <% end %>
+            </ul>
+          </div>
+        <% end %>
+        <% @collections.each do |collection| %>
+          <% collection_selector = collection.name.downcase == "city" ? "active-icon" : "" %>
+          <%= "<div class='collection-icon #{collection.name.downcase}-collection #{collection_selector} '
+                 data-tab='.#{collection.name.downcase}-collection' ><h3>#{collection.name.titleize} Collection</h3></div>".html_safe %>
+        <% end %>
+        <div class="clear-fix"></div>
+      </section>
+      <a class="next-arrow" href="#features"></a>
+    </div>
+  </div>
+</section>
+
+<section id="features" class="home-slide max-height">
+  <div class="wrapper vc-parent">
+    <div class="vc-child">
+      <header>
+        <h1>...And Make it Your Own</h1>
+        <div class="line-break right"></div>
+        <h3>Customize everything with hundreds of features.</h3>
+      </header>
+      <% @feature_types.each do |feature_type| %>
+        <% feature_asset_url = image_path "features/" + feature_type.name.downcase.gsub(" ", "_") + ".png" %>
+        <ul class="feature-types">
+          <%= link_to "<div class='overlay'><li> #{feature_type.name}</li></div>".html_safe, feature_type_path(feature_type.id), { style: "background-image: url(#{feature_asset_url});"} %>
+        </ul>
       <% end %>
       <div class="clear-fix"></div>
-    </section>
-  </article>
+      <a class="next-arrow" href="#contact"></a>
+    </div>
+  </div>
+</section>
 
-  <article id="features" class="max-height">
-    <header>
-      <h1>...And Make it Your Own</h1>
-      <div class="line-break right"></div>
-      <h3>Customize everything with hundreds of features.</h3>
-    </header>
-    <% @feature_types.each do |feature_type| %>
-      <% feature_asset_url = image_path "features/" + feature_type.name.downcase.gsub(" ", "_") + ".png" %>
-      <ul class="feature-types">
-        <%= link_to "<li> #{feature_type.name}</li>".html_safe, feature_type_path(feature_type.id), { style: "background-image: url(#{feature_asset_url});"} %>
-      </ul>
-    <% end %>
-    <div class="clear-fix"></div>
-  </article>
-
-  <article id="contact" class="max-height">
-    <header>
-      <h1>Get Started Today</h1>
-      <div class="line-break"></div>
-      <h3>Contact us to schedule a showing</h3>
-    </header>
-    <section class="contact-form">
-      <%= minimal_form_for @message do |f| %>
-        <%= f.input :email, placeholder: "Your email" %>
-        <%= f.input :message, placeholder: "What's on your mind?" %>
-        <%= f.button :submit, value: "Contact Us"  %>
-      <% end %>
-    </section>
-  </article>
-
+<section id="contact" class="home-slide max-height">
+  <div class="wrapper vc-parent">
+    <div class="vc-child">
+      <header>
+        <h1>Get Started Today</h1>
+        <div class="line-break"></div>
+        <h3>Contact us to schedule a showing</h3>
+      </header>
+      <section class="contact-form">
+        <%= minimal_form_for @message do |f| %>
+          <%= f.input :email, placeholder: "Your email" %>
+          <%= f.input :message, placeholder: "What's on your mind?" %>
+          <%= f.button :submit, value: "Contact Us"  %>
+        <% end %>
+      </section>
+    </div>
+  </div>
 </section>
