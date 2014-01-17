@@ -46,7 +46,7 @@ $buttonLightColor: lighten($buttonDefaultColor, 5);
 //BG Colors
 $bgColor1: $offWhite;
 $bgColor2: darken($offWhite, 15);
-$heroFilterColor: rgba($lightGrey, 0.52);
+$heroFilterColor: rgba(white, 0.52);
 
 // Flash Colors
 $errorBorder: saturate($primaryColor1, 15);
