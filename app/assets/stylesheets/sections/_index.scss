@@ -166,6 +166,7 @@ section {
     @include transition(background-position, 0.5s);
     &:hover {
         background-position: center 90%;
+        text-decoration: none;
     }
 }
 
