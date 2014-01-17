@@ -10585,6 +10585,23 @@ if ( typeof module === "object" && module && typeof module.exports === "object" 
 
 }).call(this);
 $(function() {
+
+  // *****************************
+  // ** Change Hero Image Timer **
+  // *****************************
+  function changeBackground(element, curNumber){
+    curNumber++;
+
+    if(curNumber > 3) {
+      curNumber = 1;
+    }
+    console.log(curNumber);
+    element.attr('class', 'heroImage' + curNumber +" max-height");
+    setTimeout(function(){changeBackground(element, curNumber)}, 4000);
+  }
+
+  changeBackground($('#hero'), 0);
+
   // ***************************
   // ** Produce Community Map **
   // ***************************
